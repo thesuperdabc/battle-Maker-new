@@ -103,9 +103,9 @@ jobs:
           const fs = require('fs');
           const outputFile = process.env.GITHUB_OUTPUT;
           if (outputFile) {
-            fs.appendFileSync(outputFile, 'should_create=' + shouldCreate + '\\n');
-            fs.appendFileSync(outputFile, 'next_day_num=' + nextDayNum + '\\n');
-            fs.appendFileSync(outputFile, 'create_type=' + (shouldCreateDay ? 'day' : shouldCreateNight ? 'night' : 'none') + '\\n');
+            fs.appendFileSync(outputFile, 'should_create=' + shouldCreate + '\n');
+            fs.appendFileSync(outputFile, 'next_day_num=' + nextDayNum + '\n');
+            fs.appendFileSync(outputFile, 'create_type=' + (shouldCreateDay ? 'day' : shouldCreateNight ? 'night' : 'none') + '\n');
           }
           
         } catch (error) {
@@ -116,7 +116,7 @@ jobs:
           const fs = require('fs');
           const outputFile = process.env.GITHUB_OUTPUT;
           if (outputFile) {
-            fs.appendFileSync(outputFile, 'should_create=false\\n');
+            fs.appendFileSync(outputFile, 'should_create=false\n');
           }
         }
         "
