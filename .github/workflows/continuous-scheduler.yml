@@ -95,29 +95,13 @@ jobs:
           
           console.log('Next tournament number:', nextDayNum);
           
-          console.log('should_create=' + shouldCreate);
-          console.log('next_day_num=' + nextDayNum);
-          console.log('create_type=' + (shouldCreateDay ? 'day' : shouldCreateNight ? 'night' : 'none'));
-          
-          // Set outputs using environment files
-          const fs = require('fs');
-          const outputFile = process.env.GITHUB_OUTPUT;
-          if (outputFile) {
-            fs.appendFileSync(outputFile, 'should_create=' + shouldCreate + '\n');
-            fs.appendFileSync(outputFile, 'next_day_num=' + nextDayNum + '\n');
-            fs.appendFileSync(outputFile, 'create_type=' + (shouldCreateDay ? 'day' : shouldCreateNight ? 'night' : 'none') + '\n');
-          }
+          console.log('::set-output name=should_create::' + shouldCreate);
+          console.log('::set-output name=next_day_num::' + nextDayNum);
+          console.log('::set-output name=create_type::' + (shouldCreateDay ? 'day' : shouldCreateNight ? 'night' : 'none'));
           
         } catch (error) {
           console.error('Error checking timing:', error);
-          console.log('should_create=false');
-          
-          // Set outputs using environment files
-          const fs = require('fs');
-          const outputFile = process.env.GITHUB_OUTPUT;
-          if (outputFile) {
-            fs.appendFileSync(outputFile, 'should_create=false\n');
-          }
+          console.log('::set-output name=should_create::false');
         }
         "
     
