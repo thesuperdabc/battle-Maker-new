@@ -3,7 +3,7 @@
   "oauthToken": "",
 
   "tournament": {
-    "hostTeamId": "lmao-teamfights",
+    "hostTeamId": "rare",
     "timezone": "UTC",
     "minutes": 720,
     "clockTime": 3,
