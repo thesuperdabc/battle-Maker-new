@@ -123,14 +123,14 @@ async function main() {
     // Load configuration
     const config: TournamentConfig = {
       server: "https://lichess.org",
-      hostTeamId: "lmao-teamfights",
+      hostTeamId: "rare",
       timezone: "UTC",
       minutes: 720, // 12 hours
       clockTime: 3,
       clockIncrement: 0,
       rated: true,
       variant: "standard",
-      teams: ["lmao-teamfights", "darkonteams", "rare", "tekio"],
+      teams: ["rare", "darkonteams", "tekio"],
       dryRun: process.env.DRY_RUN === '1' || process.env.DRY_RUN === 'true'
     };
 
